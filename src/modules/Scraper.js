@@ -2,17 +2,18 @@ const puppeteer = require('puppeteer');
 const Config = require('./Config');
 
 module.exports = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
     await page.goto(Config.pageURL);
+    
     const fetchedOffers = await page.evaluate(() => {
-        const offers = Array.from(document.querySelectorAll(".offer-wrapper"));
+        const offers = Array.from(document.querySelectorAll(`[data-cy="l-card"]`));
         const offersTitles = offers.map( offer => {            
             return {
-                title: offer.querySelector('strong').innerText,
-                url: offer.querySelector('.link').getAttribute('href'),
-                price: offer.querySelector('.price strong').innerText,
-                location: offer.querySelector('.breadcrumb').innerText
+                title: offer.querySelector('h6').innerText,
+                url: offer.querySelector('a').getAttribute('href'),
+                price: offer.querySelector('[data-testid="ad-price"]').innerText
+                // location: offer.querySelector('.breadcrumb').innerText
             };
         });
         return offersTitles;

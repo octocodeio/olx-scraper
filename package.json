@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.15",
+    "moment": "^2.29.4",
     "nodemailer": "^6.3.0",
-    "puppeteer": "^1.19.0"
+    "puppeteer": "^20.9.0"
   }
 }

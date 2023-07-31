@@ -1,0 +1,17 @@
+module.exports = {
+    refreshTime: 1000 * 60 * 10,
+    pageURL: 'https://www.olx.pl/oferty/q-lego-51515/',
+    mailConnection: {
+        host: "smtp.mailtrap.io",
+        port: 2525,
+        auth: {
+            user: "2796aa977d01bd",
+            pass: "f329761245cd96"
+        }
+    },
+    mailMessage: {
+        from: 'example@gmail.com',
+        to: 'example@gmail.com',
+        subject: 'Nowe oferty z olx'
+    }
+};

@@ -16,5 +16,5 @@ function generateMailHtml(newOffers){
 
 //Funkcja generuje element listy
 function renderListElement(offer) {
-    return '<li><a href="' + offer.url + '">' + offer.title + '</a> - ' + offer.location + ' za ' + offer.price + '</li>';
+    return '<li><a href="' + offer.url + '">' + offer.title + '</a> - za ' + offer.price + '</li>';
 }
